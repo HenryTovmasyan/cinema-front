@@ -1,0 +1,26 @@
+<h3 class="title">{{title}}</h3>
+<div class="container content">
+  <div class="row">
+    <div class="hall col-md-4 row">
+      <span class="tv col-md-10 "></span>
+      <ul class="places">
+        <li *ngFor="let detail of movieDetails,index as i"
+            [ngClass]="{
+                     'is-picked': is_picked.includes(detail.id),
+                     'freePlace': detail.booked == '0' && detail.active == '0',
+                     'bookedPlace': detail.booked == '1',
+                     'is-picked-by-another': detail.active == '1' && detail.booked == '0'
+                }" (click)="pickPlace(detail,i)"
+            [title]="is_picked.includes(detail.id) ? 'Is Picked' : (detail.booked == '0' && detail.active == '0')
+            ? 'Free place' : (detail.booked == '1') ? 'Booked' : 'Is picked by another'" >
+          <div>{{detail.id}}</div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-12"></div>
+    <div class="margin btns">
+      <button class="btn btn-primary btn-lg book-btn" (click)="book()">Book</button>
+      <button class="btn btn-secondary btn-lg book-btn" (click)="reset()">Reset</button>
+    </div>
+  </div>
+</div>

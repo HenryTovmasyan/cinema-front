@@ -1,0 +1,66 @@
+.title{
+    text-align: center;
+    font-size: 27px;
+    color: #5a4545;
+}
+div.hall{
+    width: 60%;
+    height: 200px;
+    position: relative;
+    background: #eee;
+    margin: auto;
+    border: 4px double gray;
+    border-radius: 6px;
+}
+.hall ul{
+    padding: 0;
+}
+.hall ul li {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 35px;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.hall ul li div {
+    padding-top: 8px;
+}
+.freePlace {
+    background: white;
+}
+.bookedPlace{
+    background-color: #b5b5b5;
+}
+.hall ul li.freePlace:hover{
+    background: #ffdfb7;
+}
+.hall span.tv{
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 20px;
+    background: #b5b5b5;
+}
+.is-picked{
+    background: red;
+}
+.is-picked-by-another{
+    background-color: orange;
+}
+.margin{
+    margin:auto;
+}
+.book-btn{
+    padding:10px 60px;
+}
+.btns{
+    width: 22%;
+    margin-top: 10px;
+}
+.btns .btn {
+    margin: 5px;
+}
