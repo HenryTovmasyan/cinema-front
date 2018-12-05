@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {forEach} from "@angular/router/src/utils/collection";
 
 @Component({
   selector: 'app-theater-seats',
@@ -24,13 +25,40 @@ export class TheaterSeatsComponent implements OnInit {
 
   ngOnInit() {
   }
-    pickPlace (a, b): void {
-    console.log(a, b);
+    pickPlace(value, key): void {
+        const id = value.id;
+        let data = this.movieDetails[key];
+        console.log(data);
+        if (data) {
+            if (data.booked === 0 && data.active === 0 && !this.is_picked.includes(id)) {
+                this.is_picked.push(id);
+                this.bronPlace(key);
+            }
+            else {
+                if (data.booked === 0 && data.active === 1 && this.is_picked.includes(id)) {
+                    let ind = this.is_picked.indexOf(id);
+                    this.is_picked.splice(ind, 1);
+                    this.removeBron(key);
+                } else {
+                    alert('someone wants to bron this place');
+                }
+            }
+        }
+    }
+    bronPlace(key): void {
+        this.movieDetails[key].active = 1;
+    }
+    removeBron(key): void {
+        this.movieDetails[key].active = 0;
     }
     book (): void {
         console.log('book');
     }
     reset (): void {
-        console.log('reset');
+        var that = this;
+        this.is_picked.forEach(function(val) {
+            that.movieDetails[val].active = 0;
+        });
+        this.is_picked = [];
     }
 }

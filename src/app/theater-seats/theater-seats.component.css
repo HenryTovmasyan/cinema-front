@@ -46,7 +46,7 @@ div.hall{
     background: #b5b5b5;
 }
 .is-picked{
-    background: red;
+    background: red !important;
 }
 .is-picked-by-another{
     background-color: orange;

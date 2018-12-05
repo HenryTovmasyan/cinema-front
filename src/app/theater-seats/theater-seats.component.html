@@ -10,9 +10,10 @@
                      'freePlace': detail.booked == '0' && detail.active == '0',
                      'bookedPlace': detail.booked == '1',
                      'is-picked-by-another': detail.active == '1' && detail.booked == '0'
-                }" (click)="pickPlace(detail,i)"
+            }"
             [title]="is_picked.includes(detail.id) ? 'Is Picked' : (detail.booked == '0' && detail.active == '0')
-            ? 'Free place' : (detail.booked == '1') ? 'Booked' : 'Is picked by another'" >
+            ? 'Free place' : (detail.booked == '1') ? 'Booked' : 'Is picked by another'"
+            (click)="pickPlace(detail,i)">
           <div>{{detail.id}}</div>
         </li>
       </ul>
