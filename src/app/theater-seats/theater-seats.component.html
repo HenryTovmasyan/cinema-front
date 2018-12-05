@@ -4,7 +4,7 @@
     <div class="hall col-md-4 row">
       <span class="tv col-md-10 "></span>
       <ul class="places">
-        <li *ngFor="let detail of movieDetails,index as i"
+        <li *ngFor="let detail of seats,index as i"
             [ngClass]="{
                      'is-picked': is_picked.includes(detail.id),
                      'freePlace': detail.booked == '0' && detail.active == '0',

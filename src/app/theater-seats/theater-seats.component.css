@@ -5,7 +5,7 @@
 }
 div.hall{
     width: 60%;
-    height: 200px;
+    min-height: 200px;
     position: relative;
     background: #eee;
     margin: auto;
